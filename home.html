@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DODGE THE TNT</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <header>
+    <h1><a href="home.html" draggable="false">DODGE THE TNT</a></h1>
+    <img class="logo" src="image/TNT_JE3_BE2.jpg" alt="Logo TNT" />
+  </header>
+
+  <main class="home-grid">
+    <section id="welcome" class="panel">
+      <h2>Bienvenue</h2>
+
+      <p class="subtitle">
+        Déplace-toi avec <span class="kbd">←</span><span class="kbd">→</span><span class="kbd">↑</span><span class="kbd">↓</span> et esquive les TNT !
+      </p>
+
+      <div class="field">
+        <label for="username_input">Pseudo</label>
+        <input
+          type="text"
+          id="username_input"
+          inputmode="text"
+          autocomplete="nickname"
+          maxlength="16"
+          placeholder="Ex: Alex_42"
+          aria-describedby="pseudo_help"
+        />
+        <div id="pseudo_help" class="help">
+          3–16 caractères : lettres/chiffres/_ (pas d'espaces).
+        </div>
+        <div id="pseudo_error" class="error" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="field">
+        <label>Difficulté</label>
+        <div class="choices" role="radiogroup" aria-label="Difficulté">
+          <label class="choice"><input type="radio" name="difficulty" value="easy"> Facile</label>
+          <label class="choice"><input type="radio" name="difficulty" value="normal" checked> Normal</label>
+          <label class="choice"><input type="radio" name="difficulty" value="hard"> Difficile</label>
+          <label class="choice"><input type="radio" name="difficulty" value="insane"> Hardcore</label>
+        </div>
+      </div>
+
+      <div class="field row">
+        <label class="toggle">
+          <input type="checkbox" id="sound_toggle" />
+          <span> Sons</span>
+        </label>
+      </div>
+
+      <button id="play_btn" class="btn primary" type="button">Jouer</button>
+
+      <div class="tips">
+        <p><span class="pill">Astuces</span> <span class="kbd">P</span> pause · <span class="kbd">R</span> rejouer · <span class="kbd">S</span> sons</p>
+      </div>
+    </section>
+
+    <section id="scores" class="panel">
+      <div class="panel-head">
+        <h2>Meilleurs scores (session)</h2>
+        <button id="reset_scores" class="btn ghost" type="button">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rang</th>
+              <th>Pseudo</th>
+              <th>Score</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="score-table-body">
+            <!-- Injecté par homeScript.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mini">
+        Les scores sont gardés uniquement tant que l’onglet/session du navigateur est ouvert.
+      </p>
+    </section>
+
+    <section class="panel howto">
+      <h2>Comment jouer</h2>
+      <ul>
+        <li>Reste dans la zone de jeu et évite les TNT qui tombent.</li>
+        <li>Ton score augmente avec le temps.</li>
+        <li>Collision = fin de partie. Tu peux rejouer et tenter le top 10.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>INSA Toulouse • Mini-projet Web • 2026</p>
+  </footer>
+
+  <script src="homeScript.js" defer></script>
+</body>
+</html>
